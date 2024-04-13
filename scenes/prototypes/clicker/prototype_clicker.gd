@@ -15,7 +15,7 @@ func write_book() -> void:
 
 func update_label_text() -> void:
 	label.text = "Books Written : %s" %booksWritten
-
+	
 
 func _ready() -> void:
 	update_label_text()
