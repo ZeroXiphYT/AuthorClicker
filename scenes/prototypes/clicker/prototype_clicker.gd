@@ -8,17 +8,19 @@ extends Control
 @export var user_interface : UserInterface
 
 
-var booksWritten : int = 0
-var writingSpeed : int = 1
 
+
+
+
+func _process(_delta : float) -> void:
+	update_label_text()
 
 func write_book() -> void:
-	booksWritten += writingSpeed
-	update_label_text()
+	Game.ref.data.books_written += Game.ref.data.writing_speed
 
 
 func update_label_text() -> void:
-	label.text = "Books Written : %s" %booksWritten
+	label.text = "Books Written : %s" %Game.ref.data.books_written
 	
 
 func _ready() -> void:

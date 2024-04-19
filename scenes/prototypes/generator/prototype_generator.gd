@@ -7,8 +7,7 @@ extends Control
 @export var timer: Timer
 @export var user_interface : UserInterface
 
-var booksWritten : int 
-var writingSpeed : int = 1
+
 
 
 @export var view : UserInterface.Views
@@ -18,12 +17,15 @@ func _ready() -> void:
 	visible = false
 	user_interface.navigation_requested.connect(_on_navigation_request)
 
-func write_books() -> void:
-	booksWritten += writingSpeed
+func _process(_delta: float) -> void:
 	update_label_text()
 
+
+func write_books() -> void:
+	Game.ref.data.books_written += Game.ref.data.writing_speed
+
 func update_label_text() -> void:
-	label.text = "Books Written : %s" %booksWritten
+	label.text = "Books Written : %s" %Game.ref.data.books_written
 
 func begin_autowriting_books() -> void:
 	timer.start()
