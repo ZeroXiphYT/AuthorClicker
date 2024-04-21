@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3qc8o4vakjk8"]
+[gd_scene load_steps=3 format=3 uid="uid://b3qc8o4vakjk8"]
 
 [ext_resource type="Script" path="res://scenes/prototypes/clicker/prototype_clicker.gd" id="1_7lxny"]
+[ext_resource type="Script" path="res://scenes/user_interface/books_label.gd" id="2_obd23"]
 
-[node name="PrototypeClicker" type="Control" node_paths=PackedStringArray("label")]
+[node name="PrototypeClicker" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7lxny")
-label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 80)
@@ -23,6 +23,7 @@ theme_type_variation = &"HeaderLarge"
 text = "Books Written : <value>"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_obd23")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(320, 80)

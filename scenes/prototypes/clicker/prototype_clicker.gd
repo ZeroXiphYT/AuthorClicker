@@ -1,8 +1,6 @@
 class_name PrototypeClicker
 extends Control
 
-@export var label : Label
-
 
 @export var view : UserInterface.Views
 @export var user_interface : UserInterface
@@ -12,19 +10,13 @@ extends Control
 
 
 
-func _process(_delta : float) -> void:
-	update_label_text()
 
 func write_book() -> void:
-	Game.ref.data.books_written += Game.ref.data.writing_speed
+	HandlerBooks.ref.write_books(Game.ref.data.writing_speed)
 
 
-func update_label_text() -> void:
-	label.text = "Books Written : %s" %Game.ref.data.books_written
-	
 
 func _ready() -> void:
-	update_label_text()
 	visible = true
 	user_interface.navigation_requested.connect(_on_navigation_request)
 
