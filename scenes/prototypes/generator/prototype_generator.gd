@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func write_books() -> void:
-	HandlerBooks.ref.write_books(Game.ref.data.writing_speed)
+	HandlerBooks.ref.write_books(Game.ref.data.autowrite_speed)
 
 
 
